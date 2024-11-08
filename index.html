@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Landing Page con WhatsApp</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="landing-container">
+        
+        <h1>Bem-vindo</h1>
+        <p>Escolha com quem deseja falar</p>
+        <div class="button-container">
+            <!-- 10 Botones con diferentes números de WhatsApp -->
+            <button onclick="openWhatsApp('5511970176611')">Enrique</button>
+            <button onclick="openWhatsApp('5511945492938')">Charles</button>
+            <button onclick="openWhatsApp('5511939470254')">Jenifer</button>
+            <button onclick="openWhatsApp('5511992087400')">Fani</button>
+
+        </div>
+    </div>
+
+    <script>
+        function openWhatsApp(phoneNumber) {
+            // Redireccionamos a WhatsApp
+            const message = encodeURIComponent("Bom dia, ...");
+            const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
+            window.location.href = whatsappUrl;
+        }
+    </script>
+</body>
+</html>
